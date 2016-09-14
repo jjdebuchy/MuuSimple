@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MuuSimple</title>
+    <link rel="stylesheet" href="css/style.css" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(-34.6156541,-58.5734052),
+    zoom:5,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+  </head>
+  <body>
+
+    <!--Barra de navegacion-->
+    <header class="headerIndex">
+
+      <nav>
+        <div class="barra-navegacion">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="registro.html">Registrate</a></li>
+            <li><a href="login.html">Ingresar</a></li>
+            <li><a href="#">Vender</a></li>
+            <li><a href="FAQ.html"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </nav>
+
+    </header>
+
+    <!--Texto principal-->
+    <section class="main-text">
+      <div class="texto-central">
+        <h1>MuuSimple</h1>
+        <p>Comprá y vendé tu ganado vacuno</p>
+      </div>
+    </section>
+
+    <section class="informacion">
+
+      <!--Categorias-->
+
+      <div class="info-info">
+        <h2>Categorias</h2>
+        <p>Esta web se trata sobre , consectetur adipisicing elit, sed do eiusmod tempor incididunt ut</p>
+      </div>
+
+      <div class="opciones">
+
+        <div class="opcion">
+        <p>Vaquillona </p>
+        <a href="#"><img src="imagenes/vaquillona.jpg" alt="vaquillo" /></a>
+      </div>
+
+        <div class="opcion">
+        <p>
+          Vaquillonas Preñadas
+        </p>
+        <a href="#"><img src="imagenes/vaquillona-prenada.jpg" alt="vaquillo" /></a>
+      </div>
+
+        <div class="opcion">
+        <p>
+          Vacas
+        </p>
+        <a href="#"><img src="imagenes/vaca.jpg" alt="vaquillo" /></a>
+      </div>
+
+        <div class="opcion">
+        <p>
+          vacas preñadas
+        </p>
+        <a href="#"><img src="imagenes/vaca-prenada.jpg" alt="vaquillo" /></a>
+      </div>
+
+      </div>
+
+    <div class="opciones">
+
+      <div class="opcion">
+        <p>
+          Terneros
+        </p>
+        <a href="#"><img src="imagenes/ternero.jpg" alt="vaquillo" /></a>
+      </div>
+
+      <div class="opcion">
+        <p>
+          Terneras
+        </p>
+        <a href="#"><img src="imagenes/ternera.jpg" alt="vaquillo" /></a>
+      </div>
+
+      <div class="opcion">
+        <p>
+          Toros
+        </p>
+        <a href="#"><img src="imagenes/toro.jpg" alt="vaquillo" /></a>
+      </div>
+
+      <div class="opcion">
+        <p>
+          Otros
+        </p>
+        <a href="#">  <img src="imagenes/otros.jpg" alt="vaquillo" /></a>
+      </div>
+    </div>
+
+    </section>
+
+    <!-- Mapa -->
+    <section class="informacion" id="mapa">
+      <div class="info-info">
+        <h2>Mapa</h2>
+        <p>
+         consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+        </p>
+      </div>
+      <div id="googleMap" style="width:900px;height:600px;"></div>
+    </section>
+
+
+    <footer>
+
+      <!--Redes Sociales-->
+
+      <div class="redes-sociales">
+        <ul>
+          <li><a href="https://www.facebook.com/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+          <li> <a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li> <a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a> </li>
+          <li><i class="fa fa-envelope" aria-hidden="true"></i></li>
+        </ul>
+      </div>
+
+      <!--Menu-->
+
+      <ul class="menu">
+        <li><a href="#">Terminos de uso</a></li>
+        <li><a href="#">Privacidad</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="FAQ.html">Preguntas Frecuentes</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
