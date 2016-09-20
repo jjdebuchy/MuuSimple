@@ -245,8 +245,6 @@ footer a:hover {
 
 }
 
-
-
 /*formularios*/
 .formulario label, .formulario h1, .formulario h2, .formulario h3{
   color: #545454;
@@ -259,18 +257,18 @@ footer a:hover {
   color: #959595;
 }
 
-/*.formulario{
+.formulario{
   max-width: 85%;
   border-radius: 15px;
   margin: 8em auto 10em;
   text-align: center;
   padding: 40px 0;
-  background-color: rgba(158, 158, 158, 0.1);
+  background-color: white;
 
 }
 .recordame{
   font-size: 3em;
-}*/
+}
 .formulario h2{
   color: #47cdd9;
   font-size:3.5em;
