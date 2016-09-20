@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registrate</title>
-    <link rel="stylesheet" href="css\style.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="css/font-awesome.min.css">
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,7 +14,7 @@
   </head>
   <body>
 
-    <!--Barra de navegacion
+    <!--Barra de navegacion-->
     <header class="headerIndex">
 
       <nav>
@@ -29,29 +29,36 @@
         </div>
       </nav>
 
-    </header> -->
+    </header>
 
 
     <!-- Formulario-->
-    <div class="formulario">
-      <form>
-        <h2>Registrate</h2>
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" id="nombre" placeholder="Juan"><br>
-        <label for="apellido">Apellido:</label>
-        <input type="text" name="apellido" placeholder="Perez" id="apellido"><br>
-        <label for="mail">E-mail:</label>
-        <input type="e-mail" name="mail" id="mail" placeholder="juanperez@gmail.com"><br>
-        <label for="telefono">Telefono:</label>
-        <input type="tel" name="telefono" id="telefono" placeholder="011 123 4567"><br>
-        <label for="clave">Crear clave:</label>
-        <input type="password" name="clave" value="clave" placeholder="contraseña"><br>
-        <input type="checkbox" name="name" value="recordar" checked="checked"> <p class="recordame">
-          Recordarme
-        </p>
-        <br>
-        <input type="submit" value="Registrarme" class="btn">
-      </form>
+    <div class="container">
+      <div class="row">
+        <div class=".col-xs-11 .col-sm-10 .offset-sm-1 .col-md-8 .offset-md-2 .col-lg-6 .offset-lg-3">
+          <form>
+            <h2>Registrate</h2>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Juan"><br>
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" placeholder="Perez" id="apellido"><br>
+            <label for="mail">E-mail:</label>
+            <input type="e-mail" name="mail" id="mail" placeholder="juanperez@gmail.com"><br>
+            <label for="telefono">Telefono:</label>
+            <input type="tel" name="telefono" id="telefono" placeholder="011 123 4567"><br>
+            <label for="clave">Crear clave:</label>
+            <input type="password" name="clave" value="clave" placeholder="contraseña"><br>
+            <input type="checkbox" name="name" value="recordar" checked="checked"> <p class="recordame">
+              Recordarme
+            </p>
+            <br>
+            <input type="submit" value="Registrarme" class="btn">
+          </form>
+        </div>
+      </div>
+    </div>
+
+
       <div class="login">
         <p>Ya tenes cuenta?</p>
         <a href="login.html">Iniciá sesión</a>

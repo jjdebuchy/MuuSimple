@@ -8,10 +8,7 @@ body{
   margin: 0;
   font-size: 10px;
   font-family: "Lato", Helvetica, sans-serif;
-  background-color: #f2f2f2;
-  background-image: url(../imagenes/dibujo.png);
-  background-repeat: repeat;
-
+  background-color: #959595;
 }
 a{
   text-decoration: none;
@@ -262,7 +259,7 @@ footer a:hover {
   color: #959595;
 }
 
-.formulario{
+/*.formulario{
   max-width: 85%;
   border-radius: 15px;
   margin: 8em auto 10em;
@@ -273,7 +270,7 @@ footer a:hover {
 }
 .recordame{
   font-size: 3em;
-}
+}*/
 .formulario h2{
   color: #47cdd9;
   font-size:3.5em;
@@ -294,8 +291,8 @@ label, input{
 .formulario a{
   display: inline-block;
   padding: 5px;
-    text-decoration: underline;
-    font-size: 1.44em;
+  text-decoration: underline;
+  font-size: 1.44em;
 }
 .formulario a:hover {
   color: #47cdd9;
