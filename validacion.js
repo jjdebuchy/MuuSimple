@@ -1,4 +1,4 @@
-window.onload(){
+window.onload = function(){
   var inputNombre = document.getElementById('nombre');
   var inputApellido = document.getElementById('apellido');
   var inputMail = document.getElementById('mail');
@@ -7,22 +7,27 @@ window.onload(){
   var inputRClave = document.getElementById('rClave');
   var inputSubmit = document.getElementById('enviar');
 
-  submit.onClick = function(e){
+  inputSubmit.onClick = function(e){
     e.preventDefault();
-    var errores = [];
+
     function validar(){
       //validacion del nombre
       if(trim(inputNombre.value).length == 0 || typeOf(inputNombre) !== string ){
         alert("Por favor completa el nombre");
+        //mostrar errores
         errores.push("Nombre incompleto");
       }
       if(trim(inputApellido.value).length == 0 || typeOf(inputApellido) !== string ){
         alert("Por favor completa el Apellido");
         errores.push("Apellido sin completar");
       }
+      if(trim(inputClave.value).length < 7 ){
+        alert("Por favor completa el Apellido");
+        errores.push("Clave sin completar");
+      }
       if(errores.length == 0){
         registrar();
-        mostrarUsuarios();
+        alert("Gracias por registrarte, sos el usuario " + mostrarUsuarios());
       }
     }
 
@@ -52,5 +57,4 @@ window.onload(){
       mostrarCantidadUsuarios.open('GET', 'https://sprint.digitalhouse.com/getUsuarios', true);
       mostrarCantidadUsuarios.send();
     }
-  }
 }
