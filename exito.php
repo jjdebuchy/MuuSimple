@@ -30,8 +30,7 @@
     </header>
 
     <section>
-      <h2>Bienvenido a MuuSimple</h2>
-      <p>Gracias por registrarte <?= $usuario["nombre"]?>, sos el usuario # </p>
+      <h2>Bienvenido a MuuSimple</h2> 
     </section>
     <!--Footer-->
     <footer>

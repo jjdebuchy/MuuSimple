@@ -1,7 +1,7 @@
 <?php
 	require("funciones.php");
 	if (estaLogueado()) {
-		header("Location:inicio-muusimple.php");exit;
+		header("Location:inicio.php");exit;
 	}
 	$errores = [];
 	if ($_POST) {
@@ -12,7 +12,7 @@
 			if (isset($_POST("recordame"))){
 				guardarCookie($usuario);
 			}
-			header("Location:inicio-muusimple.php");exit;
+			header("Location:inicio.php");exit;
 		}
 	}
 ?>

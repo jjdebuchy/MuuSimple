@@ -49,6 +49,7 @@
     <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <script type="text/javascript" href="validacion.js"></script>
   </head>
   <body>
     <!--Barra de navegacion -->
