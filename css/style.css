@@ -210,11 +210,6 @@ footer a:hover {
   top: 10px;
   left: 2px;
 }
-
-.contenedor{
-
-}
-
 .listaFAQ {
   clear:both;
   margin-top: 4em;
@@ -255,6 +250,7 @@ footer a:hover {
 }
 .formulario input{
   color: #959595;
+  border-radius:5%;
 }
 
 .formulario{
@@ -308,10 +304,30 @@ label, input{
   .formulario{
     max-width: 75%;
   }
+  .mail input{
+    width:80%;
+    max-width: 10em;
+  }
+}
+@media (min-width: 450px) {
+  input{
+      width: 9em;
+  }
+  .mail input{
+    width: 75%;
+    max-width: 12em;
+  }
+  .nombre , .apellido , .telefono , .clave{
+    display: inline-block;
+    margin: 10px 0.7em;
+  }
 }
 @media (min-width: 750px) {
   .formulario{
     max-width: 60%;
+  }
+  .mail input{
+    max-width: 24em;
   }
 }
 
