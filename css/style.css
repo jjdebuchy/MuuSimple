@@ -310,12 +310,15 @@ button:hover{
   margin-bottom: 2.5em;
   padding: 0;
 }
+.recordarme{
+  margin-bottom: 1.5em;
+}
 .recordarme input{
+  max-width: 2em;
   display: inline-block;
-  width: 5%;
 }
 .recordarme label{
-  width: 10%;
+  max-width: 5em;
 }
 
 /*Media Queries*/

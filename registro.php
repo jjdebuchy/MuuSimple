@@ -105,7 +105,7 @@
           <input type="password" name="clave" value='<?= $claveDefault ?>' id="clave">
         </div> <br>
         <div class="recordarme">
-          <input type="checkbox" name="recordar" value="recordar" checked="checked" id="recodarme">
+          <input type="checkbox" name="recordar" value="recordar" checked="checked" id="recordarme">
           <label for="recordarme">Recordarme</label>
         </div><br>
         <button class="btn" type="submit" name="registrar">Comenzar</button>
