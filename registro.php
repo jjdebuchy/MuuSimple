@@ -84,30 +84,31 @@
             </ul>
         </div>
         <?php } ?>
-        <div class="nombre">
+        <div class="a">
           <label for="nombre">Nombre:</label>
           <input type="text" name="nombre" id="nombre" value='<?= $nombreDefault ?>'>
         </div>
-        <div class="apellido">
+        <div class="a">
           <label for="apellido">Apellido:</label>
           <input type="text" name="apellido" id="apellido" value='<?= $apellidoDefault ?>'>
         </div>
-        <div class="mail">
+        <div class="b">
           <label for="mail">E-mail:</label>
           <input type="e-mail" name="mail" id="mail" value='<?= $mailDefault ?>'>
         </div>
-        <div class="telefono">
+        <div class="a">
           <label for="telefono">Telefono:</label>
           <input type="tel" name="telefono" id="telefono" value='<?= $telefonoDefault ?>'>
         </div>
-        <div class="clave">
+        <div class="a">
           <label for="clave">Crear clave:</label>
-          <input type="password" name="clave" value='<?= $claveDefault ?>'>
+          <input type="password" name="clave" value='<?= $claveDefault ?>' id="clave">
         </div> <br>
-        <input type="checkbox" name="recordar" value="recordar" checked="checked">
-        <label for="recordarme"></label>
-        <br>
-        <input type="submit" value="Registrarme" class="btn">
+        <div class="recordarme">
+          <input type="checkbox" name="recordar" value="recordar" checked="checked" id="recodarme">
+          <label for="recordarme">Recordarme</label>
+        </div><br>
+        <button class="btn" type="submit" name="registrar">Comenzar</button>
       </form>
       <div class="login">
         <p>Ya tenes cuenta?</p>

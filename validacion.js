@@ -13,8 +13,7 @@ window.onload = function(){
     function validar(){
       //validacion del nombre
       if(trim(inputNombre.value).length == 0 || typeOf(inputNombre) !== string ){
-        alert("Por favor completa el nombre");
-        //mostrar errores
+        alert("Por favor completa el nombre";
         errores.push("Nombre incompleto");
       }
       if(trim(inputApellido.value).length == 0 || typeOf(inputApellido) !== string ){
@@ -57,4 +56,6 @@ window.onload = function(){
       mostrarCantidadUsuarios.open('GET', 'https://sprint.digitalhouse.com/getUsuarios', true);
       mostrarCantidadUsuarios.send();
     }
+
+  }
 }
