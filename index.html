@@ -7,19 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
-
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
-<script>
-function initialize() {
-  var mapProp = {
-    center:new google.maps.LatLng(-34.6156541,-58.5734052),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAj3hvA3mVPWQKC7ZG8Gy1iw6F36FMKbP4"></script>
+    <script>
+    function initialize() {
+      var mapProp = {
+        center:new google.maps.LatLng(-34.6156541,-58.5734052),
+        zoom:5,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+      };
+      var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 
   </head>
   <body>
@@ -44,7 +43,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <!--Texto principal-->
     <section class="main-text">
       <div class="video-bg">
-        <video autoplay muted loop poster="imagenes/cows.png">
+
+        <video autoplay muted loop poster="cows.png">
           <source src="imagenes/cows-1280.mp4" type="video/mp4">
         </video>
         <img src="imagenes/cows.png" alt="vacas" />
