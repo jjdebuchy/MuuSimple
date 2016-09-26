@@ -1,37 +1,4 @@
-*{
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-body{
-  padding: 0;
-  margin: 0;
-  font-size: 10px;
-  font-family: "Lato", Helvetica, sans-serif;
-  background-color: #FAFAFA ;
-}
-a{
-  text-decoration: none;
-}
-a :link, a:visited{
-  color: currentColor;
-}
-a:hover, i:hover{
-  color: #47cdd9;
-}
-li{
-  text-decoration: none;
-}
-
-.headerIndex nav, .informacion, footer, .formulario {
-  background-color: white;
-}
-
 /*header*/
-.headerIndex {
-  color: black;
-}
-
 .headerIndex nav{
   overflow: hidden;
   padding: 0.8em;
@@ -42,8 +9,12 @@ li{
   z-index: 10;
   opacity: 0.5;
 }
-.barra-navegacion ul{
+.navegacion{
   float: right;
+  display: inline-block;
+}
+.fa{
+  display: none;
 }
 .barra-navegacion li{
   display: inline-block;
@@ -52,27 +23,33 @@ li{
   font-weight: 300;
   opacity: 1;
 }
-.barra-navegacion a{
-  color: black;
-}
 
 /*Texto central*/
-.main-text{
-  height: 90vh;
-  background-attachment: scroll, fixed;
-  background-color: #494d53;
-  background-image: url("assets/css/images/overlay.png"), url("../imagenes/fondo.jpg");
-  background-position: top left, center center;
-  background-repeat: repeat, no-repeat;
-  background-size: auto, cover;
-  padding: 16em 0;
-  position: relative;
-  opacity: 0.8;
+.video-bg{
+  margin-top: 0;
+  height: 720px;
+  width: 100%;
+  z-index: -5;
+  overflow: hidden;
+}
+.video-bg video{
+  min-width: 100%;
+  min-height: 100%:
+  object-fit: contain;
+  top: 0;
+  left: 0;
 }
 .texto-central{
   text-align: center;
   margin: auto;
   opacity: 100%;
+  z-index: 10;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 40vh;
 }
 
 .texto-central h1{
@@ -83,13 +60,21 @@ li{
 .texto-central p{
   font-size: 2.8em;
   font-weight: 300;
-  margin-bottom: 3em;
   letter-spacing: 0.1em;
+  margin-bottom: 1.5em;
 }
-
+.texto-central a{
+  margin-top: 0.5em;
+  border: 1px solid white;
+  border-radius: 5%;
+  padding: 0.6em 2em;
+  color: white;
+  font-size: 2em;
+}
 
 /*informacion*/
 .informacion{
+  margin-top: 3em;
   position: relative;
   overflow: hidden;
 }
@@ -128,26 +113,29 @@ li{
   float: left;
   width: 20%;
   text-align: center;
-  border: 3px solid black;
+  border: 2px solid #edeeee;
   border-bottom: 0;
   text-transform: uppercase;
   opacity: 0.8;
-  margin: 0 2%;
-  border-radius: 10%;
+  margin: 2% 2%;
+  border-radius: 15px 15px 10px 10px;
+  background-color: white;
 }
 
 .opcion p{
+  max-height: 20%;
   padding: 5% 0%;
-  font-size: 1.8em;
-  font-weight: bold;
+  font-size: 1.5em;
+  color: #545454;
 }
 
 .opcion img{
   width: 100%;
-  height: 100%;
-  border-radius: 0 0 10% 10%;
-  border-top: solid 1px black;
-  border-bottom: solid 3px black ;
+  height: 80%;
+  object-fit: contain;
+  border-radius: 0 0 10px 10px;
+  border-top: solid 1px #edeeee;
+  border-bottom: solid 2px #edeeee ;
 }
 
 a:hover{
@@ -156,14 +144,11 @@ a:hover{
 
 #mapa{
   background-color: #f2f2f2;
-  margin-top: 10em;
+  padding-top: 10em;
 }
 
 #googleMap{
-  margin: 0 auto;
-  margin-top: 5%;
-  margin-bottom: 5%;
-
+  margin: 15% auto 5%;
 }
 
 /*footer*/
@@ -203,7 +188,7 @@ footer{
     color: lightgrey;
 }
 footer a:hover {
-  border-bottom: 1px dotted lightgrey;
+  color: #47cdd9;
 }
 /*Paginas adicionales*/
 
@@ -211,42 +196,53 @@ footer a:hover {
 
 .h1FAQ {
   font-size: 3em;
-  float: left;
-  position: absolute;
-  top: 10px;
-  left: 2px;
+  margin: 2em 0 1em;
+  color: #737373;
+  text-align: center;
 }
 .listaFAQ {
   clear:both;
-  margin-top: 4em;
-  width: 750px;
+  margin: 4em auto 10em;
+  width: 90%;
   display: block;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, 0);
-
 }
-
-.listaFAQ li {
+.listaFAQ li{
+  color: #737373;
+  cursor: pointer;
+}
+.listaFAQ li,  .listaFAQ div{
   display: block;
   padding: 1.5em;
-  font-size: 3em;
-  background-color:rgba(141, 144, 148, 0.62);
-  border: solid black 3px;
+  font-size: 2em;
+  background-color: white;
+  border:0.05em solid #edeeee;
   text-align: center;
-
+  border-radius: 0.25em;
 }
 .listaFAQ div{
-  display: block;
-  padding: 1.5em;
-  font-size: 3em;
-  background-color: rgba(141, 144, 148, 0.62);
-  border: solid black 1px;
   margin: 1em;
-
+  color: #8b8b8b;
+  display: none;
+}
+@media (min-width: 800px) {
+  .listaFAQ{
+    width:60%;
+  }
 }
 
+
 /*formularios*/
+.formulario label, .formulario h1, .formulario h2, .formulario h3{
+  color: #545454;
+}
+.formulario p, .formulario a{
+  color: black;
+  text-shadow: 1px 1px 2px white;
+}
+.formulario input{
+  color: #959595;
+}
+
 .formulario{
   max-width: 85%;
   border-radius: 15px;
@@ -254,43 +250,27 @@ footer a:hover {
   text-align: center;
   padding: 40px 0;
   background-color: white;
-  border: 1px solid #edeeee;
+
+}
+.recordame{
+  font-size: 3em;
 }
 .formulario h2{
-  color: #737373;
+  color: #47cdd9;
   font-size:3.5em;
-  margin-bottom: 1.5em;
-}
-.formulario label, .formulario p, .formulario a {
-  color: #8b8b8b;
-}
-.formulario input{
-  background-color: #fafafa;
-  border-radius:5%;
-  border: 2px solid #edeeee;
-  box-shadow: none;
-  width: 70%;
-}
-.formulario label{
-  width: 30%;
+  margin-bottom: 0.5em;
 }
 label, input{
-  margin: 0;
+  margin: 15px 0;
   font-size: 1.68em;
-  display: inline-block;
+  display: block;
 }
-button{
-  border-radius: 5%;
-  border: 1px solid #47cdd9;
+.btn{
+  border-radius: 8%;
+  border:0.24em solid #47cdd9;
   padding: 0.8em 3.2em;
-  font-size: 1.68em;
-  background: none;
-  color: #47cdd9;
-  margin-bottom: 1em;
-}
-button:hover{
   background-color: #47cdd9;
-  color: white;
+  font-size: 1.8em;
 }
 .formulario a{
   display: inline-block;
@@ -305,24 +285,12 @@ button:hover{
   display: inline-block;
   font-size: 1.44em;
 }
-.a, .b{
-  margin: auto;
-  margin-bottom: 2.5em;
-  padding: 0;
-}
-.recordarme{
-  margin-bottom: 1.5em;
-}
-.recordarme input{
-  max-width: 2em;
-  display: inline-block;
-}
-.recordarme label{
-  max-width: 5em;
-}
 
 /*Media Queries*/
 @media (min-width: 320px) {
+  input, label{
+    display: inline-block;
+  }
   .formulario{
     max-width: 75%;
   }
@@ -330,25 +298,6 @@ button:hover{
 @media (min-width: 750px) {
   .formulario{
     max-width: 60%;
-  }
-  .a{
-    display: inline-block;
-    width: 43%;
-  }
-  .a label{
-    width: 33%;
-  }
-  .a input{
-    width: 65%;
-  }
-  .b{
-    width: 80%;
-  }
-  .b input{
-    width: 85%;
-  }
-  .b label{
-    width: 14%;
   }
 }
 
@@ -367,17 +316,42 @@ button:hover{
 
   .barra-navegacion {
     margin-left: 0;
+    width: 3em;
+    display: inline-block;
+  }
+  .navegacion{
+    display: none;
+  }
+  .hide{
+    font-size: 8em;
+    display: inline-block;
   }
   .barra-navegacion li{
     display: block;
-    font-size: 10em;
-    margin-bottom: 0.3em;
-    text-align: center;
+    padding: 5%;
   }
-
+  .main-text{
+    max-height: 300px;
+    width: 100%;
+  }
+  .video-bg{
+    max-height: 240px;
+    width: 100%;
+  }
+  .video-bg video {
+    display: none;
+  }
+  .video-bg img{
+    display: inline-block;
+    height: 240px;
+  }
   .texto-central{
-      margin-top: 20%;
-    }
+    margin-top: 15vh;
+    font-size: 6px;
+  }
+  .informacion h2{
+    margin-top: 2em;
+  }
   .opcion{
     width: 70%;
     margin: 5% 21.5%;
@@ -391,16 +365,30 @@ button:hover{
   .barra-navegacion li{
     font-size: 2.2em;
   }
-  .barra-navegacion ul{
+  .navegacion{
     float: none;
     text-align: center;
+  }
+  .video-bg{
+    max-height: 400px;
+  }
+  .video-bg img{
+    display: inline-block;
+    height: 400px;
+  }
+  .video-bg video{
+    display: none;
+  }
+  .texto-central{
+    font-size: 8px;
+    margin-top: 15vh;
   }
   .opcion{
     width: 60%;
     margin: 5% 21.5%;
     }
   .opcion p{
-    font-size: 1em;
+    font-size: 2em;
   }
 
 }
