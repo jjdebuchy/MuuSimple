@@ -1,3 +1,29 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body{
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+  font-family: "Lato", Helvetica, sans-serif;
+  background-color: #fafafa;
+}
+a{
+  text-decoration: none;
+}
+a:visited{
+  color: currentColor;
+}
+a:hover, i:hover{
+  color: #47cdd9;
+}
+
+.headerIndex nav, .informacion, footer, .formulario {
+  background-color: white;
+}
+
 /*header*/
 .headerIndex nav{
   overflow: hidden;
@@ -232,17 +258,6 @@ footer a:hover {
 
 
 /*formularios*/
-.formulario label, .formulario h1, .formulario h2, .formulario h3{
-  color: #545454;
-}
-.formulario p, .formulario a{
-  color: black;
-  text-shadow: 1px 1px 2px white;
-}
-.formulario input{
-  color: #959595;
-}
-
 .formulario{
   max-width: 85%;
   border-radius: 15px;
@@ -250,27 +265,43 @@ footer a:hover {
   text-align: center;
   padding: 40px 0;
   background-color: white;
-
-}
-.recordame{
-  font-size: 3em;
+  border: 1px solid #edeeee;
 }
 .formulario h2{
-  color: #47cdd9;
+  color: #737373;
   font-size:3.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1.5em;
+}
+.formulario label, .formulario p, .formulario a {
+  color: #8b8b8b;
+}
+.formulario input{
+  background-color: #fafafa;
+  border-radius:5%;
+  border: 2px solid #edeeee;
+  box-shadow: none;
+  width: 70%;
+}
+.formulario label{
+  width: 30%;
 }
 label, input{
-  margin: 15px 0;
+  margin: 0;
   font-size: 1.68em;
-  display: block;
+  display: inline-block;
 }
-.btn{
-  border-radius: 8%;
-  border:0.24em solid #47cdd9;
+button{
+  border-radius: 5%;
+  border: 1px solid #47cdd9;
   padding: 0.8em 3.2em;
+  font-size: 1.68em;
+  background: none;
+  color: #47cdd9;
+  margin-bottom: 1em;
+}
+button:hover{
   background-color: #47cdd9;
-  font-size: 1.8em;
+  color: white;
 }
 .formulario a{
   display: inline-block;
@@ -285,12 +316,24 @@ label, input{
   display: inline-block;
   font-size: 1.44em;
 }
+.a, .b{
+  margin: auto;
+  margin-bottom: 2.5em;
+  padding: 0;
+}
+.recordarme{
+  margin-bottom: 1.5em;
+}
+.recordarme input{
+  max-width: 2em;
+  display: inline-block;
+}
+.recordarme label{
+  max-width: 5em;
+}
 
 /*Media Queries*/
 @media (min-width: 320px) {
-  input, label{
-    display: inline-block;
-  }
   .formulario{
     max-width: 75%;
   }
@@ -298,6 +341,25 @@ label, input{
 @media (min-width: 750px) {
   .formulario{
     max-width: 60%;
+  }
+  .a{
+    display: inline-block;
+    width: 43%;
+  }
+  .a label{
+    width: 33%;
+  }
+  .a input{
+    width: 65%;
+  }
+  .b{
+    width: 80%;
+  }
+  .b input{
+    width: 85%;
+  }
+  .b label{
+    width: 14%;
   }
 }
 
