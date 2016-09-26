@@ -1,21 +1,3 @@
-<?php
-	require("funciones.php");
-	if (estaLogueado()) {
-		header("Location:inicio.php");exit;
-	}
-	$errores = [];
-	if ($_POST) {
-		$errores = validarLogin();
-		if (empty($errores)){
-			$usuario = traerUsuarioPorEmail($_POST["mail"]);
-			loguear($usuario);
-			if (isset($_POST("recordame"))){
-				guardarCookie($usuario);
-			}
-			header("Location:inicio.php");exit;
-		}
-	}
-?>
 <!DOCTYPE html>
 <html>
   <head>
