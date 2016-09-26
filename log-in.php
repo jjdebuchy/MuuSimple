@@ -1,7 +1,7 @@
 <?php
 	require("funciones.php");
 	if (estaLogueado()) {
-		header("Location:inicio-muusimple.php");exit;
+		header("Location:inicio.php");exit;
 	}
 	$errores = [];
 	if ($_POST) {
@@ -12,7 +12,7 @@
 			if (isset($_POST("recordame"))){
 				guardarCookie($usuario);
 			}
-			header("Location:inicio-muusimple.php");exit;
+			header("Location:inicio.php");exit;
 		}
 	}
 ?>
@@ -50,14 +50,16 @@
 
     <div class="formulario">
         <h2>Inicia sesión</h2>
-        <form>
-          <label for="mail">E-mail:</label>
-          <input type="e-mail" name="name" id="mail" placeholder="juanperez@gmail.com">
-          <br>
-          <label for="clave">Clave:</label>
-          <input type="password" name="clave" value="clave" placeholder="contraseña" checked="checked">
-          <br>
-          <input type="submit" value="Ingresar" class="btn">
+				<form>
+					<div class="a">
+						<label for="mail">E-mail:</label>
+	          <input type="e-mail" name="name" id="mail">
+					</div>
+					<div class="a">
+						<label for="clave">Clave:</label>
+	          <input type="password" name="clave" value="clave" checked="checked">
+					</div>
+					<button type="submit" name="Ingresar">Ingresar</button>
         </form>
         <a href="#">Olvidaste tu contraseña?</a>
         <div class="register">

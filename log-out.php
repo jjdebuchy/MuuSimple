@@ -2,5 +2,5 @@
 	session_start();
 	session_destroy();
 	setcookie("usuarioLogueado","", -1);
-	header("Location:inicio-muusimple.php");exit;
+	header("Location:inicio.php");exit;
 ?>

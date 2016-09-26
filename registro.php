@@ -49,6 +49,8 @@
     <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <script type="text/javascript" src="validacion.js"></script>
+
   </head>
   <body>
     <!--Barra de navegacion -->
@@ -58,8 +60,8 @@
         <div class="barra-navegacion">
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="registro.html">Registrate</a></li>
-            <li><a href="login.html">Ingresar</a></li>
+            <li><a href="registro.php">Registrate</a></li>
+            <li><a href="log-in.php">Ingresar</a></li>
             <li><a href="#">Vender</a></li>
             <li><a href="FAQ.html"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
           </ul>
@@ -82,21 +84,31 @@
             </ul>
         </div>
         <?php } ?>
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" id="nombre" value='<?= $nombreDefault ?>'><br>
-        <label for="apellido">Apellido:</label>
-        <input type="text" name="apellido" id="apellido" value='<?= $apellidoDefault ?>'><br>
-        <label for="mail">E-mail:</label>
-        <input type="e-mail" name="mail" id="mail" value='<?= $mailDefault ?>'><br>
-        <label for="telefono">Telefono:</label>
-        <input type="tel" name="telefono" id="telefono" value='<?= $telefonoDefault ?>'><br>
-        <label for="clave">Crear clave:</label>
-        <input type="password" name="clave" value='<?= $claveDefault ?>'><br>
-        <input type="checkbox" name="recordar" value="recordar" checked="checked"> <p class="recordarme">
-          Recordarme
-        </p>
-        <br>
-        <input type="submit" value="Registrarme" class="btn">
+        <div class="a">
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" id="nombre" value='<?= $nombreDefault ?>'>
+        </div>
+        <div class="a">
+          <label for="apellido">Apellido:</label>
+          <input type="text" name="apellido" id="apellido" value='<?= $apellidoDefault ?>'>
+        </div>
+        <div class="b">
+          <label for="mail">E-mail:</label>
+          <input type="e-mail" name="mail" id="mail" value='<?= $mailDefault ?>'>
+        </div>
+        <div class="a">
+          <label for="telefono">Telefono:</label>
+          <input type="tel" name="telefono" id="telefono" value='<?= $telefonoDefault ?>'>
+        </div>
+        <div class="a">
+          <label for="clave">Crear clave:</label>
+          <input type="password" name="clave" value='<?= $claveDefault ?>' id="clave">
+        </div> <br>
+        <div class="recordarme">
+          <input type="checkbox" name="recordar" value="recordar" checked="checked" id="recordarme">
+          <label for="recordarme">Recordarme</label>
+        </div><br>
+        <button class="btn" type="submit" name="registrar">Comenzar</button>
       </form>
       <div class="login">
         <p>Ya tenes cuenta?</p>
