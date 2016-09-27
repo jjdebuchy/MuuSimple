@@ -1,0 +1,9 @@
+En este sprint modificamos el css de los formularios, las FAQs y el home de acuerdo con las devoluciones del primer sprint. Tambien realizamos las tareas requeridas para este sprint y en el caso del formulario de registro agregamos la validacion por php.
+
+Distribucion de tareas:
+
+Mateo DAgostino: validacion por js.
+
+Juan Jose Debuchy: funcion de js para que las respuestas de las faqs aparezcan y desaparezcan al hacerles click.
+
+Noelia Romano: pedido de ajax para aumentar y mostrar la cantidad de usuarios , maquetacion del home y formularios y faqs, validacion por php. 
