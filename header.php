@@ -2,7 +2,6 @@
 
       <nav>
         <div class="barra-navegacion">
-          <i class="fa fa-bars hide" aria-hidden="true"></i>
           <ul class="navegacion">
             <li><a href="index.php">Home</a></li>
             <li><a href="registro.php">Registrate</a></li>
