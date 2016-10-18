@@ -32,7 +32,7 @@
         <a href="#">Olvidaste tu contraseña?</a>
         <div class="register">
           <p>No tenes cuenta?</p>
-          <a href="registro.html">Registrate</a>
+          <a href="registro.php">Registrate</a>
         </div>
     </div>
 
