@@ -1,5 +1,5 @@
 <?php
 	require_once("soporte.php");
 	$auth->logout();
-	header("Location:inicio.php");exit;
+	header("Location:index.php");exit;
 ?>
