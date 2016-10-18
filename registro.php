@@ -1,5 +1,9 @@
 <?php
-  require_once("funciones-registracion.php");
+require_once("soporte.php");
+  require_once("clases/validadorUsuario.php");
+
+  $repoUsuarios = $repo->getRepositorioUsuarios();
+
   if (estaLogueado()) {
       header("Location:inicio.php");exit;
   }
@@ -14,10 +18,28 @@
 
   if ($_POST) {
     $errores = validarRegistracion();
-    if (empty($errores)) {
-      registrarUsuario();
-      header("Location:exito.php");exit;
-    }
+    if (empty($errores))
+        {
+            //No hay Errores
+
+            //Primero: Lo registro
+            $usuario = new Usuario(
+                null,
+                $_POST["nombre"],
+                $_POST["apellido"],
+                $_POST["email"],
+                $_POST["telefono"],
+                $_POST["password"]
+
+            );
+            $usuario->setPassword($_POST["password"]);
+            $usuario->guardar($repoUsuarios);
+
+            //Segundo: Lo envio al exito
+            header("Location:inicio.php");exit;
+
+
+        }
     if (!isset($errores["nombre"])){
         $nombreDefault = $_POST["nombre"];
     }
