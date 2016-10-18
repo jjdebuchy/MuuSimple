@@ -1,10 +1,10 @@
 <?php
 require_once("soporte.php");
-  require_once("clases/validadorUsuario.php");
+require_once("clases/validadorUsuario.php");
 
   $repoUsuarios = $repo->getRepositorioUsuarios();
 
-  if (estaLogueado()) {
+  if ($auth->estaLogueado()) {
       header("Location:inicio.php");exit;
   }
   $errores = [];
@@ -14,10 +14,13 @@ require_once("soporte.php");
   $mailDefault = ' ';
   $telefonoDefault = ' ';
   $claveDefault = ' ';
-  $rClaveDefault = ' ';
 
-  if ($_POST) {
-    $errores = validarRegistracion();
+  if (!empty($_POST))
+  {
+      $validador = new ValidadorUsuario();
+      //Se envió información
+      $errores = $validador->validar($_POST, $repo);
+
     if (empty($errores))
         {
             //No hay Errores
@@ -27,7 +30,7 @@ require_once("soporte.php");
                 null,
                 $_POST["nombre"],
                 $_POST["apellido"],
-                $_POST["email"],
+                $_POST["mail"],
                 $_POST["telefono"],
                 $_POST["password"]
 
@@ -55,9 +58,7 @@ require_once("soporte.php");
     if (!isset($errores["clave"])){
         $claveDefault = $_POST["clave"];
     }
-    if (!isset($errores["r-clave"])){
-        $rClaveDefault = $_POST["r-clave"];
-    }
+
   }
 
  ?>
