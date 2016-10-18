@@ -1,3 +1,29 @@
+<?php
+	require_once("soporte.php");
+	require_once("clases/validadorLogin.php");
+
+	if ($auth->estaLogueado()) {
+		header("Location:inicio.php");exit;
+	}
+	$errores = [];
+	if ($_POST) {
+
+		$validador = new ValidadorLogin();
+
+		$errores = $validador->validar($_POST, $repo);
+
+		if (empty($errores))
+		{
+			$usuario = $repo->getRepositorioUsuarios()->traerUsuarioPorMail($_POST["mail"]);
+			$auth->loguear($usuario);
+			if ($validador->estaEnFormulario("recordame"))
+			{
+				$auth->guardarCookie($usuario);
+			}
+			header("Location:inicio.php");exit;
+		}
+	}
+?>
 <!DOCTYPE html>
 <html>
   <head>
