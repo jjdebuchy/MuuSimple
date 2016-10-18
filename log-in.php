@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css\style.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="validacionLogin.js"></script>
   </head>
   <body>
 
@@ -25,9 +25,9 @@
 					</div>
 					<div class="a">
 						<label for="clave">Clave:</label>
-	          <input type="password" name="clave" value="clave" checked="checked">
+	          <input type="password"  id="clave"  name="clave" checked="checked">
 					</div>
-					<button type="submit" name="Ingresar">Ingresar</button>
+					<button type="submit" id="btn" name="Ingresar">Ingresar</button>
         </form>
         <a href="#">Olvidaste tu contraseña?</a>
         <div class="register">
