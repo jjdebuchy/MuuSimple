@@ -98,7 +98,7 @@
       </form>
       <div class="login">
         <p>Ya tenes cuenta?</p>
-        <a href="login.html">Iniciá sesión</a>
+        <a href="log-in.php">Iniciá sesión</a>
       </div>
     </div>
 

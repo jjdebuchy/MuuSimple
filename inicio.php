@@ -14,7 +14,7 @@
 		<a href="logout.php">Log Out</a>
 	<?php } else { ?>
 		<a href="register.php">Registrate</a>
-		<a href="login2.php">Logueate</a>
+		<a href="log-in.php">Logueate</a>
 	<?php } ?>
 	<?php require_once 'footer.php' ?>
 </body>
