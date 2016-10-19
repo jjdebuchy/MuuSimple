@@ -42,7 +42,7 @@
 
     <!-- Formulario-->
 
-    <div class="formulario">
+    <div class="formulario" method="post">
         <h2>Inicia sesión</h2>
 				<form>
 					<div class="a">
