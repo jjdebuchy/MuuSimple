@@ -10,49 +10,37 @@ window.onload = function(){
 
 
   inputSubmit.addEventListener("click", function(event){
+    if(validar()){
       event.preventDefault();
-
+    }
+    else {
+      return true;
+    }
 
       function validar(){
 
         //validacion del nombre
-
 
         if(inputMail.value.trim().length == 0 || typeof(inputMail.value.trim()) !== "string" ){
           alert("Por favor completa el Mail");
           errores.push("Mail sin completar");
         }
 
-
-
-        else if (!inputMail.value.match(expmail)) {
+        else if (inputMail.value.!match(expmail)) {
           alert("Mail NO valido");
           errores.push("Mail no valido");
         }
-
-
-
-
 
         if(inputClave.value.trim().length < 7 ){
           alert("Por favor completa la clave");
           errores.push("Clave sin completar");
         }
 
-        console.log(errores);
-        console.log(errores.length);
-
-
-         if(errores.length == 0){
-
-
-
-        alert("INICIASTE SESION ");
+        if(errores.length == 0){
+          alert("INICIASTE SESION ");
 
         }
     }
-
-
       validar();
 
 
