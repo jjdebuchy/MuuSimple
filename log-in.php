@@ -6,6 +6,9 @@
 		header("Location:inicio.php");exit;
 	}
 	$errores = [];
+	$mailDefault = ' ';
+  $claveDefault = ' ';
+
 	if ($_POST) {
 
 		$validador = new ValidadorLogin();
@@ -22,6 +25,12 @@
 			}
 			header("Location:inicio.php");exit;
 		}
+		if (!isset($errores["mail"])){
+        $mailDefault = $_POST["mail"];
+    }
+		if (!isset($errores["clave"])){
+        $claveDefault = $_POST["clave"];
+    }
 	}
 ?>
 <!DOCTYPE html>
