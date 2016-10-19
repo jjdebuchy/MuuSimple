@@ -26,7 +26,7 @@ window.onload = function(){
           errores.push("Mail sin completar");
         }
 
-        else if (inputMail.value.!match(expmail)) {
+        else if (inputMail.value.match(expmail)) {
           alert("Mail NO valido");
           errores.push("Mail no valido");
         }
