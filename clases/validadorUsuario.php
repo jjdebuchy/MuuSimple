@@ -25,7 +25,7 @@
 	    if (empty(trim($datos["mail"]))) {
 	        $errores["mail"] = "Completa el mail";
 	    }
-	    elseif (!filter_var($datos["mail"], FILTER_VALIDATE_EMAIL)) {
+	    elseif (filter_var($datos["mail"], FILTER_VALIDATE_EMAIL)) {
 	        $errores["mail"] = "Ingresa un mail valido";
 	    }
 
