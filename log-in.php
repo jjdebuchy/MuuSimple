@@ -64,7 +64,7 @@
             </ul>
         </div>
         <?php } ?>
-				<form>
+				<form method="POST">
 					<div class="a">
 						<label for="mail">E-mail:</label>
 	          <input type="e-mail" name="name" id="mail" value='<?= $mailDefault ?>'>
