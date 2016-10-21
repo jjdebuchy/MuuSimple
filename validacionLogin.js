@@ -6,8 +6,6 @@ window.onload = function(){
   var expmail=/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
   var errores=[];
 
-  console.log(inputSubmit);
-
 
   inputSubmit.addEventListener("click", function(event){
     if(validar()){

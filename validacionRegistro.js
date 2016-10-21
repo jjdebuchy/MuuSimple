@@ -18,7 +18,6 @@ window.onload = function(){
       else{
         return true;
       }
-    }
 
 
       function validar(){
