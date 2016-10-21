@@ -3,26 +3,26 @@
 	require_once("repositorio.php");
 
 	class ValidadorLogin extends Validador {
-		public function Validar(Array $datos, Repositorio $repo) {
+		public function validar(Array $datos, Repositorio $repo) {
 
 			$repoUsuarios = $repo->getRepositorioUsuarios();
 
 			$errores = [];
 
-	        if (empty(trim($datos["mail"])))
+	        if (empty(trim($datos["email"])))
 	        {
-	            $errores["mail"] = "Por favor ingrese mail";
+	            $errores["email"] = "Por favor ingrese mail";
 	        }
 	        if (empty(trim($datos["password"])))
 	        {
 	            $errores["password"] = "Por favor ingrese password";
 	        }
-	        if (!$repoUsuarios->existeElMail($datos["mail"]))
+	        if (!$repoUsuarios->existeElMail($datos["email"]))
 	        {
-	            $errores["mail"] = "El usuario no existe";
+	            $errores["email"] = "El usuario no existe";
 	        }
 	        else {
-	            $usuario = $repoUsuarios->traerUsuarioPorMail($datos["mail"]);
+	            $usuario = $repoUsuarios->traerUsuarioPorEmail($datos["email"]);
 
 	            if (!password_verify($datos["password"], $usuario->getPassword())) {
 	                $errores["password"] ="La contraseña es incorrecta";
