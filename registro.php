@@ -9,11 +9,11 @@ require_once("clases/validadorUsuario.php");
   }
   $errores = [];
 
-  $nombreDefault = ' ';
-  $apellidoDefault = ' ';
-  $emailDefault = ' ';
-  $telefonoDefault = ' ';
-  $claveDefault = ' ';
+  $nombreDefault = '';
+  $apellidoDefault = '';
+  $emailDefault = '';
+  $telefonoDefault = '';
+  $claveDefault = '';
 
   if (!empty($_POST))
   {
