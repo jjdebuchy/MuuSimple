@@ -1,41 +1,64 @@
 <?php
-  require_once("funciones-registracion.php");
-  if (estaLogueado()) {
+require_once("soporte.php");
+require_once("clases/validadorUsuario.php");
+
+  $repoUsuarios = $repo->getRepositorioUsuarios();
+
+  if ($auth->estaLogueado()) {
       header("Location:inicio.php");exit;
   }
   $errores = [];
 
   $nombreDefault = ' ';
   $apellidoDefault = ' ';
-  $mailDefault = ' ';
+  $emailDefault = ' ';
   $telefonoDefault = ' ';
   $claveDefault = ' ';
-  $rClaveDefault = ' ';
 
-  if ($_POST) {
-    $errores = validarRegistracion();
-    if (empty($errores)) {
-      registrarUsuario();
-      header("Location:exito.php");exit;
-    }
+  if (!empty($_POST))
+  {
+      $validador = new ValidadorUsuario();
+      //Se envió información
+      $errores = $validador->validar($_POST, $repo);
+
+    if (empty($errores))
+        {
+            //No hay Errores
+
+            //Primero: Lo registro
+            $usuario = new Usuario(
+                null,
+                $_POST["nombre"],
+                $_POST["apellido"],
+                $_POST["email"],
+                $_POST["telefono"],
+                $_POST["password"]
+
+            );
+            $usuario->setPassword($_POST["password"]);
+            $usuario->guardar($repoUsuarios);
+
+            //Segundo: Lo envio al exito
+            header("Location:inicio.php");exit;
+
+
+        }
     if (!isset($errores["nombre"])){
         $nombreDefault = $_POST["nombre"];
     }
     if (!isset($errores["apellido"])) {
         $apellidoDefault = $_POST["apellido"];
     }
-    if (!isset($errores["mail"])){
-        $mailDefault = $_POST["mail"];
+    if (!isset($errores["email"])){
+        $mailDefault = $_POST["email"];
     }
     if (!isset($errores["telefono"])){
         $telefonoDefault = $_POST["telefono"];
     }
-    if (!isset($errores["clave"])){
-        $claveDefault = $_POST["clave"];
+    if (!isset($errores["password"])){
+        $claveDefault = $_POST["password"];
     }
-    if (!isset($errores["r-clave"])){
-        $rClaveDefault = $_POST["r-clave"];
-    }
+
   }
 
  ?>
@@ -80,20 +103,17 @@
         </div>
         <div class="b">
           <label for="mail">E-mail:</label>
-          <input type="e-mail" name="mail" id="mail" value='<?= $mailDefault ?>'>
+          <input type="email" name="email" id="email" value='<?= $emailDefault ?>'>
         </div>
         <div class="a">
           <label for="telefono">Telefono:</label>
           <input type="tel" name="telefono" id="telefono" value='<?= $telefonoDefault ?>'>
         </div>
         <div class="a">
-          <label for="clave">Crear clave:</label>
-          <input type="password" name="clave" value='<?= $claveDefault ?>' id="clave">
+          <label for="password">Crear clave:</label>
+          <input type="password" name="password" value='<?= $claveDefault ?>' id="password">
         </div> <br>
-        <div class="recordarme">
-          <input type="checkbox" name="recordar" value="recordar" checked="checked" id="recordarme">
-          <label for="recordarme">Recordarme</label>
-        </div><br>
+
         <button class="btn" type="submit" name="registrar">Comenzar</button>
       </form>
       <div class="login">

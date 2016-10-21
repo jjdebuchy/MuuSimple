@@ -1,9 +1,9 @@
 window.onload = function(){
   var inputNombre = document.querySelector('#nombre');
   var inputApellido = document.querySelector('#apellido');
-  var inputMail = document.querySelector('#mail');
+  var inputMail = document.querySelector('#email');
   var inputTelefono = document.querySelector('#telefono');
-  var inputClave = document.querySelector('#clave');
+  var inputClave = document.querySelector('#password');
   var inputSubmit = document.querySelector('.btn');
   var expmail=/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
   var errores=[];
@@ -12,7 +12,13 @@ window.onload = function(){
 
 
   inputSubmit.addEventListener("click", function(event){
-      event.preventDefault();
+      if(validar()){
+        event.preventDefault();
+      }
+      else{
+        return true;
+      }
+    }
 
 
       function validar(){
@@ -67,7 +73,7 @@ window.onload = function(){
 
         }
     }
-      function registrar(){
+      /*function registrar(){
         var sumarNuevoUsuario = new XMLHttpRequest();
         sumarNuevoUsuario.onreadystatechange = function(){
           if(sumarNuevoUsuario.readyState == 4 && sumarNuevoUsuario.status == 200){
@@ -89,7 +95,7 @@ window.onload = function(){
         mostrarCantidadUsuarios.open('GET', 'https://sprint.digitalhouse.com/getUsuarios', true);
         mostrarCantidadUsuarios.send();
         alert(mostrarCantidadUsuarios());
-      }
+      }*/
 
       validar();
 

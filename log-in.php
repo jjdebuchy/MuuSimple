@@ -1,3 +1,29 @@
+<?php
+	require_once("soporte.php");
+	require_once("clases/validadorLogin.php");
+
+	if ($auth->estaLogueado()) {
+		header("Location:inicio.php");exit;
+	}
+	$errores = [];
+	if ($_POST) {
+
+		$validador = new ValidadorLogin();
+
+		$errores = $validador->validar($_POST, $repo);
+
+		if (empty($errores))
+		{
+			$usuario = $repo->getRepositorioUsuarios()->traerUsuarioPorEmail($_POST["email"]);
+			$auth->loguear($usuario);
+			if ($validador->estaEnFormulario("recordame"))
+			{
+				$auth->guardarCookie($usuario);
+			}
+			header("Location:inicio.php");exit;
+		}
+	}
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,14 +44,20 @@
 
     <div class="formulario">
         <h2>Inicia sesión</h2>
-				<form>
+				<form method="POST">
+
+					<?php include ("errores.php"); ?>
 					<div class="a">
-						<label for="mail">E-mail:</label>
-	          <input type="e-mail" name="name" id="mail">
+						<label for="email">E-mail:</label>
+	          <input type="email" name="email" id="email">
 					</div>
 					<div class="a">
-						<label for="clave">Clave:</label>
-	          <input type="password"  id="clave"  name="clave" checked="checked">
+						<label for="password">Clave:</label>
+	          <input type="password"  id="clave"  name="password" checked="checked">
+					</div>
+					<div class="">
+						Recordame
+						<input type="checkbox" name="recordame" value="true">
 					</div>
 					<button type="submit" id="btn" name="Ingresar">Ingresar</button>
         </form>

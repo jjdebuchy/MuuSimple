@@ -1,6 +1,5 @@
 <?php
-	session_start();
-	session_destroy();
-	setcookie("usuarioLogueado","", -1);
-	header("Location:inicio.php");exit;
+	require_once("soporte.php");
+	$auth->logout();
+	header("Location:index.php");exit;
 ?>
