@@ -19,7 +19,7 @@ $usuarioLogueado = $auth->traerUsuarioLogueado($repoUsuarios);
 		<a href="log-out.php">Log Out</a>
 	<?php } else { ?>
 		<a href="register.php">Registrate</a>
-		<a href="login.php">Logueate</a>
+		<a href="log-in.php">Logueate</a>
 	<?php } ?>
 	<?php require_once 'footer.php' ?>
 </body>
