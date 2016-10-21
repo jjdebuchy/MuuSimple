@@ -1,15 +1,11 @@
 <?php
 	require_once("soporte.php");
 	require_once("clases/validadorLogin.php");
-	require_once("errores.php");
 
 	if ($auth->estaLogueado()) {
 		header("Location:inicio.php");exit;
 	}
 	$errores = [];
-	$mailDefault = ' ';
-  $claveDefault = ' ';
-
 	if ($_POST) {
 
 		$validador = new ValidadorLogin();
@@ -18,7 +14,7 @@
 
 		if (empty($errores))
 		{
-			$usuario = $repo->getRepositorioUsuarios()->traerUsuarioPorMail($_POST["mail"]);
+			$usuario = $repo->getRepositorioUsuarios()->traerUsuarioPorEmail($_POST["email"]);
 			$auth->loguear($usuario);
 			if ($validador->estaEnFormulario("recordame"))
 			{
@@ -26,12 +22,6 @@
 			}
 			header("Location:inicio.php");exit;
 		}
-		if (!isset($errores["mail"])){
-        $mailDefault = $_POST["mail"];
-    }
-		if (!isset($errores["clave"])){
-        $claveDefault = $_POST["clave"];
-    }
 	}
 ?>
 <!DOCTYPE html>
@@ -52,26 +42,22 @@
 
     <!-- Formulario-->
 
-    <div class="formulario" method="post">
+    <div class="formulario">
         <h2>Inicia sesión</h2>
-				<?php if (!empty($errores)) { ?>
-        <div class="errores" style="color:red">
-            <ul>
-            <?php foreach($errores as $error) { ?>
-
-                <li><?= $error ?></li>
-            <?php } ?>
-            </ul>
-        </div>
-        <?php } ?>
 				<form method="POST">
+
+					<?php include ("errores.php"); ?>
 					<div class="a">
-						<label for="mail">E-mail:</label>
-	          <input type="e-mail" name="name" id="mail" value='<?= $mailDefault ?>'>
+						<label for="email">E-mail:</label>
+	          <input type="email" name="email" id="email">
 					</div>
 					<div class="a">
-						<label for="clave">Clave:</label>
-	          <input type="password"  id="clave" value='<?= $claveDefault ?>' name="clave">
+						<label for="password">Clave:</label>
+	          <input type="password"  id="clave"  name="password" checked="checked">
+					</div>
+					<div class="">
+						Recordame
+						<input type="checkbox" name="recordame" value="true">
 					</div>
 					<button type="submit" id="btn" name="Ingresar">Ingresar</button>
         </form>
