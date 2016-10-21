@@ -15,7 +15,7 @@ $usuarioLogueado = $auth->traerUsuarioLogueado($repoUsuarios);
 	<?php require_once 'header.php'; ?>
 	Bienvenidos a mi sitio
 	<?php if ($auth->estaLogueado()) { ?>
-		Bienvenido a MuuSimple <? =$usuarioLogueado->getNombre() ?>
+		Bienvenido a MuuSimple <?= $usuarioLogueado->getNombre() ?>
 		<a href="log-out.php">Log Out</a>
 	<?php } else { ?>
 		<a href="registro.php">Registrate</a>
