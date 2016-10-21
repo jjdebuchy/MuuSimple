@@ -1,9 +1,9 @@
 window.onload = function(){
   var inputNombre = document.querySelector('#nombre');
   var inputApellido = document.querySelector('#apellido');
-  var inputMail = document.querySelector('#mail');
+  var inputMail = document.querySelector('#email');
   var inputTelefono = document.querySelector('#telefono');
-  var inputClave = document.querySelector('#clave');
+  var inputClave = document.querySelector('#password');
   var inputSubmit = document.querySelector('.btn');
   var expmail=/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
   var errores=[];
