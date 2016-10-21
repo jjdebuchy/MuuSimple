@@ -11,7 +11,7 @@ require_once("clases/validadorUsuario.php");
 
   $nombreDefault = ' ';
   $apellidoDefault = ' ';
-  $mailDefault = ' ';
+  $emailDefault = ' ';
   $telefonoDefault = ' ';
   $claveDefault = ' ';
 
@@ -30,7 +30,7 @@ require_once("clases/validadorUsuario.php");
                 null,
                 $_POST["nombre"],
                 $_POST["apellido"],
-                $_POST["mail"],
+                $_POST["email"],
                 $_POST["telefono"],
                 $_POST["password"]
 
@@ -49,14 +49,14 @@ require_once("clases/validadorUsuario.php");
     if (!isset($errores["apellido"])) {
         $apellidoDefault = $_POST["apellido"];
     }
-    if (!isset($errores["mail"])){
-        $mailDefault = $_POST["mail"];
+    if (!isset($errores["email"])){
+        $mailDefault = $_POST["email"];
     }
     if (!isset($errores["telefono"])){
         $telefonoDefault = $_POST["telefono"];
     }
-    if (!isset($errores["clave"])){
-        $claveDefault = $_POST["clave"];
+    if (!isset($errores["password"])){
+        $claveDefault = $_POST["password"];
     }
 
   }
@@ -103,7 +103,7 @@ require_once("clases/validadorUsuario.php");
         </div>
         <div class="b">
           <label for="mail">E-mail:</label>
-          <input type="e-mail" name="mail" id="mail" value='<?= $mailDefault ?>'>
+          <input type="email" name="email" id="email" value='<?= $emailDefault ?>'>
         </div>
         <div class="a">
           <label for="telefono">Telefono:</label>
@@ -111,12 +111,9 @@ require_once("clases/validadorUsuario.php");
         </div>
         <div class="a">
           <label for="clave">Crear clave:</label>
-          <input type="password" name="clave" value='<?= $claveDefault ?>' id="clave">
+          <input type="password" name="password" value='<?= $claveDefault ?>' id="clave">
         </div> <br>
-        <div class="recordarme">
-          <input type="checkbox" name="recordar" value="recordar" checked="checked" id="recordarme">
-          <label for="recordarme">Recordarme</label>
-        </div><br>
+
         <button class="btn" type="submit" name="registrar">Comenzar</button>
       </form>
       <div class="login">

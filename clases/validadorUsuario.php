@@ -21,13 +21,13 @@
 	          $errores["apellido"] = "Por favor completa el apellido";
 	    }
 
-	    /*Validacion del mail*/
-	    if (empty(trim($datos["mail"]))) {
-	        $errores["mail"] = "Completa el mail";
-	    }
-	    elseif (filter_var($datos["mail"], FILTER_VALIDATE_EMAIL)) {
-	        $errores["mail"] = "Ingresa un mail valido";
-	    }
+	    // /*Validacion del mail*/
+	    // if (empty(trim($datos["mail"]))) {
+	    //     $errores["mail"] = "Completa el mail";
+	    // }
+	    // elseif (!filter_var($datos["mail"], FILTER_VALIDATE_EMAIL)) {
+	    //     $errores["mail"] = "Ingresa un mail valido";
+	    // }
 
 	    /*Validacion del telefono*/
 	    if (empty(trim($datos["telefono"])) ||
@@ -39,8 +39,8 @@
 	    }
 
 	    /*Validacion de la contraseña*/
-	    if (empty(trim($datos["clave"]))) {
-	        $errores["clave"] = "Completa la clave";
+	    if (empty(trim($datos["password"]))) {
+	        $errores["password"] = "Completa la clave";
 	    }
 
 

@@ -4,17 +4,17 @@
 	class Usuario {
 		private $nombre;
 		private $apellido;
-		private $mail;
+		private $email;
 		private $id;
 		private $password;
 		private $telefono;
-		private $avatar;
 
-		public function __construct($id, $nombre, $apellido, $mail, $password, $telefono) {
+
+		public function __construct($id, $nombre, $apellido, $email, $telefono, $password) {
 			$this->id = $id;
 			$this->nombre =$nombre;
 			$this->apellido = $apellido;
-			$this->mail = $mail;
+			$this->email = $email;
 			$this->telefono = $telefono;
 			$this->password = $password;
 		}
@@ -27,9 +27,9 @@
 		{
 			return $this->apellido;
 		}
-		public function getMail()
+		public function getEmail()
 		{
-			return $this->mail;
+			return $this->email;
 		}
 		public function getId()
 		{
@@ -43,21 +43,12 @@
 		{
 			return $this->telefono;
 		}
-		public function getAvatar()
-		{
-			$name = "img/" . $this->getId();
-			$matching = glob($name . ".*");
 
-			$info = pathinfo($matching[0]);
-			$ext = $info['extension'];
-
-			return $name . "." . $ext;
+		public function setNombre($nombre) {
+			$this->name = $nombre;
 		}
-		public function setName($name) {
-			$this->name = $name;
-		}
-		public function setMail($mail) {
-			$this->mail = $mail;
+		public function setEmail($email) {
+			$this->mail = $email;
 		}
 		public function setApellido($apellido) {
 			$this->apellido = $apellido;
@@ -71,20 +62,7 @@
 		public function setPassword($password) {
 			$this->password = password_hash($password, PASSWORD_DEFAULT);
 		}
-		public function setAvatar($avatar) {
-			if ($avatar["error"] == UPLOAD_ERR_OK) {
 
-				$path = "img/";
-
-				if (!is_dir($path)) {
-					mkdir($path, 0777);
-				}
-
-				$ext = pathinfo($avatar["name"], PATHINFO_EXTENSION);
-
-				move_uploaded_file($avatar["tmp_name"], $path . $this->getId() . "." . $ext);
-			}
-		}
 
 		public function guardar(RepositorioUsuarios $repo) {
 			$repo->guardar($this);
@@ -93,9 +71,9 @@
 		public function toArray() {
 			return [
 				"id" => $this->getId(),
-				"name" => $this->getNombre(),
+				"nombre" => $this->getNombre(),
 				"apellido" => $this->getApellido(),
-				"mail" => $this->getMail(),
+				"email" => $this->getEmail(),
 				"password" => $this->getPassword(),
 				"telefono" => $this->getTelefono()
 			];

@@ -1,6 +1,6 @@
 <?php
 	require_once("repositorio.php");
-	
+
 	abstract class Validador {
 		abstract public function validar(Array $datos, Repositorio $repo);
 

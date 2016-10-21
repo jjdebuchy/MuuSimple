@@ -25,9 +25,9 @@
 
 	        	$usuario = new Usuario(
 	        		$usuarioArray["id"],
-	        		$usuarioArray["name"],
+	        		$usuarioArray["nombre"],
 							$usuarioArray["apellido"],
-	        		$usuarioArray["mail"],
+	        		$usuarioArray["email"],
 	        		$usuarioArray["telefono"],
 	        		$usuarioArray["password"]
 
