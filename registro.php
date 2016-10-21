@@ -110,8 +110,8 @@ require_once("clases/validadorUsuario.php");
           <input type="tel" name="telefono" id="telefono" value='<?= $telefonoDefault ?>'>
         </div>
         <div class="a">
-          <label for="clave">Crear clave:</label>
-          <input type="password" name="password" value='<?= $claveDefault ?>' id="clave">
+          <label for="password">Crear clave:</label>
+          <input type="password" name="password" value='<?= $claveDefault ?>' id="password">
         </div> <br>
 
         <button class="btn" type="submit" name="registrar">Comenzar</button>
