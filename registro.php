@@ -5,7 +5,7 @@ require_once("clases/validadorUsuario.php");
   $repoUsuarios = $repo->getRepositorioUsuarios();
 
   if ($auth->estaLogueado()) {
-      header("Location:inicio.php");exit;
+      header("Location:index.php");exit;
   }
   $errores = [];
 
@@ -39,7 +39,7 @@ require_once("clases/validadorUsuario.php");
             $usuario->guardar($repoUsuarios);
 
             //Segundo: Lo envio al exito
-            header("Location:inicio.php");exit;
+            header("Location:index.php");exit;
 
 
         }
@@ -74,6 +74,7 @@ require_once("clases/validadorUsuario.php");
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
     <script type="text/javascript" src="validacionRegistro.js"></script>
 
+  
   </head>
   <body>
     <!--Barra de navegacion -->
@@ -121,6 +122,9 @@ require_once("clases/validadorUsuario.php");
         <a href="log-in.php">Iniciá sesión</a>
       </div>
     </div>
+
+
+
 
     <!--Footer-->
     <?php require_once "footer.php" ?>

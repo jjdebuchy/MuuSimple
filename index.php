@@ -8,17 +8,9 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAj3hvA3mVPWQKC7ZG8Gy1iw6F36FMKbP4"></script>
-    <script>
-    function initialize() {
-      var mapProp = {
-        center:new google.maps.LatLng(-34.6156541,-58.5734052),
-        zoom:5,
-        mapTypeId:google.maps.MapTypeId.ROADMAP
-      };
-      var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+
+    <script type="text/javascript" src="mapa.js"></script>
+
     <script type="text/javascript">
     var icono = document.getElementsByClassName('hide');
     var navegacion = document.getElementsByClassName('navegacion');
