@@ -39,6 +39,12 @@ a:hover, i:hover{
   float: right;
   display: inline-block;
 }
+.home{
+  float: left;
+  display: inline-block;
+  font-size: 2em;
+}
+
 .fa{
   display: none;
 }
