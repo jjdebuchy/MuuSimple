@@ -12,6 +12,7 @@
 
       <nav>
         <div class="barra-navegacion">
+					<span class="home"><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i></a></span>
           <ul class="navegacion">
 
             <?php if ($auth->estaLogueado()) { ?>
