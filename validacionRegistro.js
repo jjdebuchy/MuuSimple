@@ -7,6 +7,12 @@ window.onload = function(){
   var inputSubmit = document.querySelector('.btn');
   var expmail=/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
   var errores=[];
+  if (navigator.geolocation) {
+ navigator.geolocation.getCurrentPosition(function(position) {
+   var pos = {
+     lat: position.coords.latitude,
+     lng: position.coords.longitude
+   };
 
   inputSubmit.addEventListener("click", function(event){
       if(!validar()){
