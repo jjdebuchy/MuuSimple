@@ -333,6 +333,10 @@ button:hover{
 .recordarme input{
   max-width: 2em;
   display: inline-block;
+  background-color: #fafafa;
+  border-radius:5%;
+  border: 2px solid #edeeee;
+  box-shadow: none;
 }
 .recordarme label{
   max-width: 5em;

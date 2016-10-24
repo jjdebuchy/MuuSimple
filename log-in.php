@@ -66,9 +66,9 @@
 						<label for="password">Clave:</label>
 	          <input type="password"  id="clave"  name="password" checked="checked">
 					</div>
-					<div class="">
-						Recordame
-						<input type="checkbox" name="recordame" value="true">
+					<div class="recordarme">
+						<input type="checkbox" name="recordame" value="true" id="recordarme">
+						<label for="recordarme">Recordame</label>
 					</div>
 					<button type="submit" id="btn" name="Ingresar">Ingresar</button>
         </form>
