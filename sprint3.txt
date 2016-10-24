@@ -1,0 +1,9 @@
+En este sprint agregamos la validacion por php, y las funciones de registracion orientadas a objetos. Adicionalmente agregamos la localizacion de algunas vacas al mapa de index.php y modificamos el js de los formularios y detalles del css teniendo en cuenta las devoluciones del último sprint.
+
+Distribucion de tareas:
+
+Mateo DAgostino: pasar el registro al modelo de objetos, añadir las vacas al mapa, modificar detalles del css
+
+Juan Jose Debuchy: pasar el registro al modelo de objetos.
+
+Noelia Romano: pasar el registro al modelo de objetos, modificacion del js de los formularios, modificar detalles del css
