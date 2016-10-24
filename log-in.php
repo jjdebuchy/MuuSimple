@@ -3,7 +3,7 @@
 	require_once("clases/validadorLogin.php");
 
 	if ($auth->estaLogueado()) {
-		header("Location:inicio.php");exit;
+		header("Location:index.php");exit;
 	}
 	$errores = [];
 	if ($_POST) {
@@ -20,7 +20,7 @@
 			{
 				$auth->guardarCookie($usuario);
 			}
-			header("Location:inicio.php");exit;
+			header("Location:index.php");exit;
 		}
 	}
 ?>
