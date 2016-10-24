@@ -74,7 +74,6 @@ require_once("clases/validadorUsuario.php");
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
     <script type="text/javascript" src="validacionRegistro.js"></script>
 
-  
   </head>
   <body>
     <!--Barra de navegacion -->
@@ -99,20 +98,20 @@ require_once("clases/validadorUsuario.php");
           <input type="text" name="nombre" id="nombre" value='<?= $nombreDefault ?>'>
         </div>
         <div class="a">
-          <label for="apellido">Apellido:</label>
-          <input type="text" name="apellido" id="apellido" value='<?= $apellidoDefault ?>'>
+          <label for="apellido" >Apellido:</label>
+          <input type="text" name="apellido" id="apellido" value='<?= $apellidoDefault ?>'onchange="validarApellido();">
         </div>
         <div class="b">
-          <label for="mail">E-mail:</label>
-          <input type="email" name="email" id="email" value='<?= $emailDefault ?>'>
+          <label for="mail" >E-mail:</label>
+          <input type="email" name="email" id="email" value='<?= $emailDefault ?>' onchange="validarMail();">
         </div>
         <div class="a">
           <label for="telefono">Telefono:</label>
-          <input type="tel" name="telefono" id="telefono" value='<?= $telefonoDefault ?>'>
+          <input type="tel" name="telefono" id="telefono" value='<?= $telefonoDefault ?>' onchange="validarTelefono();">
         </div>
         <div class="a">
           <label for="password">Crear clave:</label>
-          <input type="password" name="password" value='<?= $claveDefault ?>' id="password">
+          <input type="password" name="password" value='<?= $claveDefault ?>' id="password" onchange="validarClave();">
         </div> <br>
 
         <button class="btn" type="submit" name="registrar">Comenzar</button>
