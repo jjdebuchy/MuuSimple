@@ -12,6 +12,7 @@ body{
 }
 a{
   text-decoration: none;
+  color: #000;
 }
 a:visited{
   color: currentColor;
@@ -106,14 +107,16 @@ a:hover, i:hover{
 
 /*informacion*/
 .informacion{
-  margin-top: 3em;
+  padding: 1.5em 0;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid #cdcdcd;
 }
 
 .informacion h2{
   font-size: 6em;
   margin-bottom: 0.8em;
+  color: #545454;
 }
 
 .informacion p{
@@ -176,7 +179,7 @@ a:hover{
 
 #mapa{
   background-color: #f2f2f2;
-  padding-top: 10em;
+  padding-top: 5em;
 }
 
 #googleMap{
@@ -201,7 +204,6 @@ footer{
   border: 1px solid lightgrey;
   border-radius: 15%;
   padding: 0.3em 0.4em;
-
 }
 
 .menu{
@@ -221,6 +223,9 @@ footer{
 }
 footer a:hover {
   color: #47cdd9;
+}
+footer i{
+  color: lightgrey;
 }
 /*Paginas adicionales*/
 
@@ -333,6 +338,10 @@ button:hover{
 .recordarme input{
   max-width: 2em;
   display: inline-block;
+  background-color: #fafafa;
+  border-radius:5%;
+  border: 2px solid #edeeee;
+  box-shadow: none;
 }
 .recordarme label{
   max-width: 5em;
@@ -419,6 +428,7 @@ button:hover{
   }
   .informacion h2{
     margin-top: 2em;
+    color: #545454;
   }
   .opcion{
     width: 70%;

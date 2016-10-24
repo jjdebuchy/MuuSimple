@@ -99,16 +99,16 @@ require_once("clases/validadorUsuario.php");
           <input type="text" name="nombre" id="nombre" value='<?= $nombreDefault ?>'>
         </div>
         <div class="a">
-          <label for="apellido">Apellido:</label>
+          <label for="apellido" >Apellido:</label>
           <input type="text" name="apellido" id="apellido" value='<?= $apellidoDefault ?>'>
         </div>
         <div class="b">
-          <label for="mail">E-mail:</label>
-          <input type="email" name="email" id="email" value='<?= $emailDefault ?>'>
+          <label for="mail" >E-mail:</label>
+          <input type="email" name="email" id="email" value='<?= $emailDefault ?>' >
         </div>
         <div class="a">
           <label for="telefono">Telefono:</label>
-          <input type="tel" name="telefono" id="telefono" value='<?= $telefonoDefault ?>'>
+          <input type="tel" name="telefono" id="telefono" value='<?= $telefonoDefault ?>' >
         </div>
         <div class="a">
           <label for="password">Crear clave:</label>
@@ -122,10 +122,14 @@ require_once("clases/validadorUsuario.php");
         <a href="log-in.php">Iniciá sesión</a>
       </div>
     </div>
+<<<<<<< HEAD
+    
+=======
 
 
 
 
+>>>>>>> master
     <!--Footer-->
     <?php require_once "footer.php" ?>
 

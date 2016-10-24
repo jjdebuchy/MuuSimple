@@ -5,6 +5,10 @@
 	if ($auth->estaLogueado()) {
 		header("Location:index.php");exit;
 	}
+
+	$emailDefault = '';
+  $claveDefault = '';
+
 	$errores = [];
 	if ($_POST) {
 
@@ -22,6 +26,13 @@
 			}
 			header("Location:index.php");exit;
 		}
+		if (!isset($errores["email"])){
+        $mailDefault = $_POST["email"];
+    }
+    if (!isset($errores["password"])){
+        $claveDefault = $_POST["password"];
+    }
+
 	}
 ?>
 <!DOCTYPE html>
@@ -55,9 +66,9 @@
 						<label for="password">Clave:</label>
 	          <input type="password"  id="clave"  name="password" checked="checked">
 					</div>
-					<div class="">
-						Recordame
-						<input type="checkbox" name="recordame" value="true">
+					<div class="recordarme">
+						<input type="checkbox" name="recordame" value="true" id="recordarme">
+						<label for="recordarme">Recordame</label>
 					</div>
 					<button type="submit" id="btn" name="Ingresar">Ingresar</button>
         </form>

@@ -14,98 +14,136 @@ window.onload = function(){
      lng: position.coords.longitude
    };
 
-  console.log(inputNombre);
-
-
   inputSubmit.addEventListener("click", function(event){
-      if(validar()){
+      if(!validar()){
         event.preventDefault();
       }
-      else{
+      else {
         return true;
       }
+    }, true);
 
-
-      function validar(){
-
-        //validacion del nombre
-
-        if(inputNombre.value.trim().length == 0 || !isNaN(inputNombre.value.trim()) ){
-          alert("Por favor completa el nombre");
-          errores.push("Nombre incompleto");
-        }
-
-
-        if(inputApellido.value.trim().length == 0 || !isNaN(inputNombre.value.trim()) ){
-          alert("Por favor completa el Apellido");
-          errores.push("Apellido sin completar");
-        }
-
-        if(inputMail.value.trim().length == 0 || typeof(inputMail.value.trim()) !== "string" ){
-          alert("Por favor completa el Mail");
-          errores.push("Mail sin completar");
-        }
-
-
-
-        else if (!inputMail.value.match(expmail)) {
-          alert("Mail NO valido");
-          errores.push("Mail no valido");
-        }
-
-
-        if(inputTelefono.value.trim().length == 0 || isNaN(inputTelefono.value.trim()) ){
-          alert("Por favor completa el Telefono");
-          errores.push("Telefono sin completar");
-
-        }
-
-
-        if(inputClave.value.trim().length < 7 ){
-          alert("Por favor completa la clave");
-          errores.push("Clave sin completar");
-        }
-
-        console.log(errores);
-        console.log(errores.length);
-
-
-         if(errores.length == 0){
-
-        registrar();
-
-        alert("Gracias por registrarte, sos el usuario " + mostrarUsuarios());
-
-        }
+  inputNombre.addEventListener("blur", function(){
+    if(inputNombre.value.trim().length == 0 || !isNaN(inputNombre.value.trim()) ){
+      inputNombre.style.border="1px solid #ff0000";
+      errores.push("Nombre incompleto");
     }
-      /*function registrar(){
-        var sumarNuevoUsuario = new XMLHttpRequest();
-        sumarNuevoUsuario.onreadystatechange = function(){
-          if(sumarNuevoUsuario.readyState == 4 && sumarNuevoUsuario.status == 200){
-            console.log(sumarNuevoUsuario.responseText);
-          }
-        }
-        sumarNuevoUsuario.open('GET', 'https://sprint.digitalhouse.com/nuevoUsuario', true);
-        sumarNuevoUsuario.send();
-      }
-      function mostrarUsuarios(){
-        var mostrarCantidadUsuarios = new XMLHttpRequest();
-        mostrarCantidadUsuarios.onreadystatechange = function(){
-          if(mostrarCantidadUsuarios.readyState == 4 && mostrarCantidadUsuarios.status == 200){
-            var responseJSON = mostrarCantidadUsuarios.responseText;
-            var responseParse = JSON.parse(responseJSON);
-            var responseCantidad = responseParse.cantidad;
-          }
-        }
-        mostrarCantidadUsuarios.open('GET', 'https://sprint.digitalhouse.com/getUsuarios', true);
-        mostrarCantidadUsuarios.send();
-        alert(mostrarCantidadUsuarios());
-      }*/
-
-      validar();
-
-
+    else{
+      inputNombre.style.border="1px solid #45bb17";
+    }
   });
 
+  function validarNombre(){
+      if(inputNombre.value.trim().length == 0 || !isNaN(inputNombre.value.trim()) ){
+        inputNombre.style.border="1px solid #ff0000";
+        errores.push("Nombre incompleto");
+      }
+      else{
+        inputNombre.style.border="1px solid #45bb17";
+      }
+    }
 
+  inputApellido.addEventListener("blur", function(){
+    if(inputApellido.value.trim().length == 0 || !isNaN(inputNombre.value.trim()) ){
+      inputApellido.style.border="1px solid #ff0000";
+      errores.push("Apellido sin completar");
+    }
+    else{
+      inputApellido.style.border="1px solid #45bb17";
+    }
+  }, true);
+  function validarApellido(){
+      if(inputApellido.value.trim().length == 0 || !isNaN(inputNombre.value.trim()) ){
+        inputApellido.style.border="1px solid #ff0000";
+        errores.push("Apellido sin completar");
+      }
+      else{
+        inputApellido.style.border="1px solid #45bb17";
+      }
+    }
+
+  inputMail.addEventListener("blur", function(){
+    if(inputMail.value.trim().length == 0 || typeof(inputMail.value.trim()) !== "string" ){
+      inputMail.style.border="1px solid #ff0000";
+      errores.push("Mail sin completar");
+    }
+
+    else if (!inputMail.value.match(expmail)) {
+      inputMail.style.border="1px solid #ff0000";
+      errores.push("Mail no valido");
+    }
+    else{
+      inputMail.style.border="1px solid #45bb17";
+    }
+  }, true);
+
+  function validarMail(){
+      if(inputMail.value.trim().length == 0 || typeof(inputMail.value.trim()) !== "string" ){
+        inputMail.style.border="1px solid #ff0000";
+        errores.push("Mail sin completar");
+      }
+
+      else if (!inputMail.value.match(expmail)) {
+        inputMail.style.border="1px solid #ff0000";
+        errores.push("Mail no valido");
+      }
+      else{
+        inputMail.style.border="1px solid #45bb17";
+      }
+    }
+
+  inputTelefono.addEventListener("blur", function(){
+    if(inputTelefono.value.trim().length == 0 || isNaN(inputTelefono.value.trim()) ){
+      inputTelefono.style.border="1px solid #ff0000";
+      errores.push("Telefono sin completar");
+    }
+    else{
+      inputTelefono.style.border="1px solid #45bb17";
+    }
+  }, true);
+
+  function validarTelefono(){
+      if(inputTelefono.value.trim().length == 0 || isNaN(inputTelefono.value.trim()) ){
+        inputTelefono.style.border="1px solid #ff0000";
+        errores.push("Telefono sin completar");
+      }
+      else{
+        inputTelefono.style.border="1px solid #45bb17";
+      }
+    }
+
+  inputClave.addEventListener("blur", function(){
+    if(inputClave.value.trim().length < 7 ){
+      inputClave.style.border="1px solid #ff0000";
+      errores.push("Clave sin completar");
+    }
+    else{
+      inputClave.style.border="1px solid #45bb17";
+    }
+  }, true);
+
+  function validarClave(){
+      if(inputClave.value.trim().length < 7 ){
+        inputClave.style.border="1px solid #ff0000";
+        errores.push("Clave sin completar");
+
+      }
+      else{
+        inputClave.style.border="1px solid #45bb17";
+      }
+    }
+
+  function validar(){
+    validarNombre();
+    validarApellido();
+    validarMail();
+    validarTelefono();
+    validarClave();
+    if(errores.length == 0){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
 }
