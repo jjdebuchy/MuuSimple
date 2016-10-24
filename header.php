@@ -17,7 +17,7 @@
 
             <?php if ($auth->estaLogueado()) { ?>
           		<li class="bienvenido"> Bienvenido, <?= $usuarioLogueado->getNombre() ?></li>
-              <li class="bienvenido"><a href="log-out.php">log-out</a></li>
+              <li class="bienvenido"><a href="log-out.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
           	<?php } else { ?>
               <li><a href="registro.php">Registrate</a></li>
               <li><a href="log-in.php">Ingresar</a></li>
