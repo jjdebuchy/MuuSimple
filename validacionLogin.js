@@ -1,6 +1,6 @@
 window.onload = function(){
 
-  var inputMail = document.querySelector('#mail');
+  var inputMail = document.querySelector('#email');
   var inputClave = document.querySelector('#clave');
   var inputSubmit = document.querySelector('#btn');
   var expmail=/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
@@ -8,41 +8,72 @@ window.onload = function(){
 
 
   inputSubmit.addEventListener("click", function(event){
-    if(validar()){
-      event.preventDefault();
+      if(validar()){
+        event.preventDefault();
+      }
+      else {
+        return true;
+      }
+    }, true);
+
+  inputMail.addEventListener("blur", function(){
+    if(inputMail.value.trim().length == 0 || typeof(inputMail.value.trim()) !== "string" ){
+      inputMail.style.border="1px solid #ff0000";
+      errores.push("Mail sin completar");
     }
-    else {
+
+    else if (!inputMail.value.match(expmail)) {
+      inputMail.style.border="1px solid #ff0000";
+      errores.push("Mail no valido");
+    }
+    else{
+      inputMail.style.border="1px solid #45bb17";
+    }
+  }, true);
+
+  function validarMail(){
+    if(inputMail.value.trim().length == 0 || typeof(inputMail.value.trim()) !== "string" ){
+      inputMail.style.border="1px solid #ff0000";
+      errores.push("Mail sin completar");
+    }
+
+    else if (!inputMail.value.match(expmail)) {
+      inputMail.style.border="1px solid #ff0000";
+      errores.push("Mail no valido");
+    }
+    else{
+      inputMail.style.border="1px solid #45bb17";
+    }
+  }
+
+  inputClave.addEventListener("blur", function(){
+    if(inputClave.value.trim().length < 7 ){
+      inputClave.style.border="1px solid #ff0000";
+      errores.push("Clave sin completar");
+    }
+    else{
+      inputClave.style.border="1px solid #45bb17";
+    }
+  }, true);
+
+  function validarClave(){
+    if(inputClave.value.trim().length < 7 ){
+      inputClave.style.border="1px solid #ff0000";
+      errores.push("Clave sin completar");
+    }
+    else{
+      inputClave.style.border="1px solid #45bb17";
+    }
+  }
+
+  function validar(){
+    validarMail();
+    validarClave();
+    if(errores.length == 0){
+      return false;
+    }
+    else{
       return true;
     }
-
-      function validar(){
-
-        //validacion del nombre
-
-        if(inputMail.value.trim().length == 0 || typeof(inputMail.value.trim()) !== "string" ){
-          alert("Por favor completa el Mail");
-          errores.push("Mail sin completar");
-        }
-
-        else if (inputMail.value.match(expmail)) {
-          alert("Mail NO valido");
-          errores.push("Mail no valido");
-        }
-
-        if(inputClave.value.trim().length < 7 ){
-          alert("Por favor completa la clave");
-          errores.push("Clave sin completar");
-        }
-
-        if(errores.length == 0){
-          alert("INICIASTE SESION ");
-
-        }
-    }
-      validar();
-
-
-  });
-
-
+  }
 }

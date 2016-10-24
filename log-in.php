@@ -5,6 +5,10 @@
 	if ($auth->estaLogueado()) {
 		header("Location:index.php");exit;
 	}
+
+	$emailDefault = '';
+  $claveDefault = '';
+
 	$errores = [];
 	if ($_POST) {
 
@@ -22,6 +26,13 @@
 			}
 			header("Location:index.php");exit;
 		}
+		if (!isset($errores["email"])){
+        $mailDefault = $_POST["email"];
+    }
+    if (!isset($errores["password"])){
+        $claveDefault = $_POST["password"];
+    }
+
 	}
 ?>
 <!DOCTYPE html>
