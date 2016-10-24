@@ -9,7 +9,7 @@ window.onload = function(){
   var errores=[];
 
   inputSubmit.addEventListener("click", function(event){
-      if(validar()){
+      if(!validar()){
         event.preventDefault();
       }
       else {
