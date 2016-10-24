@@ -99,19 +99,19 @@ require_once("clases/validadorUsuario.php");
         </div>
         <div class="a">
           <label for="apellido" >Apellido:</label>
-          <input type="text" name="apellido" id="apellido" value='<?= $apellidoDefault ?>'onchange="validarApellido();">
+          <input type="text" name="apellido" id="apellido" value='<?= $apellidoDefault ?>'>
         </div>
         <div class="b">
           <label for="mail" >E-mail:</label>
-          <input type="email" name="email" id="email" value='<?= $emailDefault ?>' onchange="validarMail();">
+          <input type="email" name="email" id="email" value='<?= $emailDefault ?>' >
         </div>
         <div class="a">
           <label for="telefono">Telefono:</label>
-          <input type="tel" name="telefono" id="telefono" value='<?= $telefonoDefault ?>' onchange="validarTelefono();">
+          <input type="tel" name="telefono" id="telefono" value='<?= $telefonoDefault ?>' >
         </div>
         <div class="a">
           <label for="password">Crear clave:</label>
-          <input type="password" name="password" value='<?= $claveDefault ?>' id="password" onchange="validarClave();">
+          <input type="password" name="password" value='<?= $claveDefault ?>' id="password">
         </div> <br>
 
         <button class="btn" type="submit" name="registrar">Comenzar</button>
@@ -121,10 +121,7 @@ require_once("clases/validadorUsuario.php");
         <a href="log-in.php">Iniciá sesión</a>
       </div>
     </div>
-
-
-
-
+    
     <!--Footer-->
     <?php require_once "footer.php" ?>
 
