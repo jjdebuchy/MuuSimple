@@ -50,7 +50,7 @@ require_once("clases/validadorUsuario.php");
         $apellidoDefault = $_POST["apellido"];
     }
     if (!isset($errores["email"])){
-        $mailDefault = $_POST["email"];
+        $emailDefault = $_POST["email"];
     }
     if (!isset($errores["telefono"])){
         $telefonoDefault = $_POST["telefono"];
@@ -74,7 +74,7 @@ require_once("clases/validadorUsuario.php");
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
     <script type="text/javascript" src="validacionRegistro.js"></script>
 
-  
+
   </head>
   <body>
     <!--Barra de navegacion -->
@@ -122,14 +122,7 @@ require_once("clases/validadorUsuario.php");
         <a href="log-in.php">Iniciá sesión</a>
       </div>
     </div>
-<<<<<<< HEAD
-    
-=======
 
-
-
-
->>>>>>> master
     <!--Footer-->
     <?php require_once "footer.php" ?>
 
