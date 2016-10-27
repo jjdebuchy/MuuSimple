@@ -25,11 +25,13 @@
 	        	$usuario = new Usuario(
 	        		$usuarioArray["id"],
 	        		$usuarioArray["nombre"],
+					$usuarioArray["apellido"],
 	        		$usuarioArray["email"],
-	        		$usuarioArray["apellido"],
-	        		$usuarioArray["password"],
-	        		$usuarioArray["telefono"]
+	        		$usuarioArray["telefono"],
+					$usuarioArray["password"]
 	        	);
+
+
 
 	            $usuarios[] = $usuario;
 	        }
@@ -40,7 +42,7 @@
 
 	    public function guardar(Usuario $usuario) {
 	    	if ($usuario->getId() == null) {
-	    		$sql = "INSERT into usuarios(id,nombre,apellido,email,telefono,password) values (default, :nombre, :apellido, :email, :telefono, :password)";
+	    		$sql = "INSERT into usuario(id,nombre,apellido,email,telefono,password) values (default, :nombre, :apellido, :email, :telefono, :password)";
 	    	}
 	    	else {
 	    		$sql = "UPDATE usuario set
@@ -85,12 +87,12 @@
 
 	        if ($usuarioArray) {
 	        	$usuario = new Usuario(
-						$usuarioArray["id"],
-						$usuarioArray["nombre"],
-						$usuarioArray["email"],
-						$usuarioArray["apellido"],
-						$usuarioArray["password"],
-						$usuarioArray["telefono"]
+					$usuarioArray["id"],
+					$usuarioArray["nombre"],
+					$usuarioArray["apellido"],
+					$usuarioArray["email"],
+					$usuarioArray["telefono"],
+					$usuarioArray["password"]
 	        	);
 	        	return $usuario;
 	        }

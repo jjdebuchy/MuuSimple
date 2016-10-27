@@ -33,9 +33,9 @@ require_once("clases/validadorUsuario.php");
                 $_POST["email"],
                 $_POST["telefono"],
                 $_POST["password"]
-
             );
             $usuario->setPassword($_POST["password"]);
+
             $usuario->guardar($repoUsuarios);
 
             //Segundo: Lo envio al exito
@@ -72,7 +72,7 @@ require_once("clases/validadorUsuario.php");
     <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
-    <script type="text/javascript" src="validacionRegistro.js"></script>
+    <!-- <script type="text/javascript" src="validacionRegistro.js"></script> -->
 
 
   </head>
@@ -85,14 +85,15 @@ require_once("clases/validadorUsuario.php");
       <form method="post" >
         <h2>Registrate</h2>
         <?php if (!empty($errores)) { ?>
-        <div class="errores" style="color:red">
+        <div class="errores" style="color:red; text-transform:uppercase; font-size: 1.3em; ">
             <ul>
             <?php foreach($errores as $error) { ?>
 
-                <li><?= $error ?></li>
+                <li style=" list-style:none;"><?= $error ?></li>
             <?php } ?>
             </ul>
         </div>
+        <br><br>
         <?php } ?>
         <div class="a">
           <label for="nombre">Nombre:</label>

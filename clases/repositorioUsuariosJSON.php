@@ -26,12 +26,16 @@
 	        	$usuario = new Usuario(
 	        		$usuarioArray["id"],
 	        		$usuarioArray["nombre"],
-							$usuarioArray["apellido"],
+					$usuarioArray["apellido"],
 	        		$usuarioArray["email"],
 	        		$usuarioArray["telefono"],
 	        		$usuarioArray["password"]
 
 	        	);
+
+
+
+
 
 	            $usuarios[] = $usuario;
 	        }
@@ -63,12 +67,13 @@
 	    }
 
 	    public function guardar(Usuario $usuario) {
+
 	    	if ($usuario->getId() == null) {
 	    		$usuario->setId($this->traerProximoId());
 	    	}
 
 	    	$usuarioJSON = json_encode($usuario->toArray());
 
-	    	file_put_contents("usuarios.json", $usuarioJSON . "\n", FILE_APPEND);
+			file_put_contents("usuarios.json", $usuarioJSON . "\n", FILE_APPEND);
 	    }
 	}
